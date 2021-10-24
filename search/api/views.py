@@ -61,6 +61,7 @@ class AnimalSearchFilter(django_filters.FilterSet):
         )
         return queryset
 
+
 class AnimalSearch(ListAPIView):
     queryset = DetectedObject.objects.select_related('frame', 'frame__info')
     serializer_class = DetectedObjectSerializer
