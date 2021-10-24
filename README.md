@@ -15,3 +15,9 @@ docker-compose up
 ### Запуск Frontend
 
 Открыть `frontend` директорию и выполнить команды описанные в `README.md`
+
+
+### Из полезного
+
+https://github.com/KEKDATA/KEKPETS_ATTRS - код для обучения модели хвоста и цвета  
+https://github.com/KEKDATA/KEKPETS_FRONTEND - отдельный фронтенд в случае если нет желания из монорепы запускать
