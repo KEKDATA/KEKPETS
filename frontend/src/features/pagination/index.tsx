@@ -11,7 +11,7 @@ export const Pagination = () => {
     searchModel.$isResultsWithSomeProblem,
   );
 
-  if (!paginationCount || isResultsWithSomeProblem) {
+  if (!paginationCount || isResultsWithSomeProblem || paginationCount <= 1) {
     return null;
   }
 
