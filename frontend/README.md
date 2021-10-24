@@ -3,7 +3,10 @@
 - Node.js (LTS) https://nodejs.org/en/, сейчас 14.17.0
 - yarn https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable (либо под вашу ось), сейчас  1.22.10
 - Выполнить в корне проекта `yarn install`
-- Запустить локально `yarn start`
+
+### Запуск локально
+
+- `yarn start`
 - Запустить просмотр кастомных ui - компонентов `yarn storybook`
 
 ### Запуск в докере
