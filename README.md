@@ -1,7 +1,7 @@
 # Endpoints
 
 - Главный интерфейс поиска https://kekdata.github.io/KEKPETS_PUBLIC/ 
-- Админка для загрузки изображений https://kekpets.win/admin/search/videcamframe/
+- Админка для загрузки изображений https://kekpets.win/admin/search/videcamframe/ (пароль/логин - admin/admin)
 - Апи поиска https://kekpets.win/api/v1/
 
 ### Запуск API + ML
