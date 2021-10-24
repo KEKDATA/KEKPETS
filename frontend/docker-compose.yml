@@ -1,0 +1,9 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        API_URL: ${API_URL:-'https://kekpets.win/api/v1"}
+    ports:
+      - "${PORT:-3000}:80"

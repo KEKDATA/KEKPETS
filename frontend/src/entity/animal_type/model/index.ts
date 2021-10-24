@@ -1,0 +1,1 @@
+export { animalTypeModel } from './model';

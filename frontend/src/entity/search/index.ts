@@ -1,0 +1,1 @@
+export { searchModel } from './model';

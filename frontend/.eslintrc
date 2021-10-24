@@ -1,0 +1,45 @@
+{
+  "extends": [
+    "@eslint-kit/patch",
+    "@eslint-kit/base",
+    "@eslint-kit/typescript",
+    "@eslint-kit/node",
+    "@eslint-kit/react"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "tsconfig.json"
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "window": true,
+    "FormData": true,
+    "sessionStorage": true,
+    "localStorage": true,
+    "document": true,
+    "navigator": true,
+    "requestAnimationFrame": true,
+    "location": true,
+    "Audio": true,
+    "FileReader": true,
+    "Blob": true,
+    "WebSocket": true,
+    "SpeechSynthesisUtterance": true
+  },
+  "rules": {
+    "@typescript-eslint/no-unnecessary-condition": 0,
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "import/no-anonymous-default-export": "warn",
+    "unicorn/prefer-add-event-listener": "warn",
+    "react/jsx-props-no-spreading": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export { tailModel } from './model';

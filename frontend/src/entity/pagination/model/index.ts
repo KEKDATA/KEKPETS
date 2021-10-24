@@ -1,0 +1,1 @@
+export { paginationModel } from './model';

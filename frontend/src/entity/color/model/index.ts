@@ -1,0 +1,1 @@
+export { colorModel } from './model';
