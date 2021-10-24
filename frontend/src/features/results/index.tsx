@@ -19,6 +19,13 @@ const ResultsContainer = styled('div')`
   display: flex;
 `;
 
+const ResultBox = styled(Box)(({ theme }) => ({
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    width: 'auto',
+  },
+}));
+
 export const Results = () => {
   const results = useStore(searchModel.$results);
   const resultsNotFound = useStore(searchModel.$resultsNotFound);
@@ -42,7 +49,7 @@ export const Results = () => {
 
       default: {
         return (
-          <Box sx={{ mt: 4 }}>
+          <ResultBox sx={{ mt: 4 }}>
             <Grid
               rowSpacing={3}
               container
@@ -54,7 +61,7 @@ export const Results = () => {
                 <Result key={result.id} result={result} />
               ))}
             </Grid>
-          </Box>
+          </ResultBox>
         );
       }
     }

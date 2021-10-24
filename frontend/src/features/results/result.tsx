@@ -59,7 +59,7 @@ export const Result = ({ result }: Props) => {
   const isMainInfoExist = address || date;
 
   return (
-    <Grid item>
+    <Grid item sx={{ width: '100%' }}>
       <Container ref={containerRef}>
         <CardContent>
           <Box
@@ -70,6 +70,7 @@ export const Result = ({ result }: Props) => {
                 image={imageWithPrefix}
                 bbox={bbox}
                 width={isMobile ? '100%' : 500}
+                height={isMobile ? 320 : 364}
                 isImageLoaded={isImageLoaded}
               />
             </CardImage>

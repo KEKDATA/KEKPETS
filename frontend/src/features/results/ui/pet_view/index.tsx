@@ -12,6 +12,7 @@ interface Props {
   bbox: string;
   isImageLoaded: boolean;
   width?: number | string;
+  height?: number | string;
 }
 
 const Skeleton = styled(MuiSkeleton)(({ theme }) => ({
@@ -22,7 +23,13 @@ const Skeleton = styled(MuiSkeleton)(({ theme }) => ({
   },
 }));
 
-export const PetView = ({ image, bbox, width, isImageLoaded }: Props) => {
+export const PetView = ({
+  image,
+  bbox,
+  width,
+  height,
+  isImageLoaded,
+}: Props) => {
   return (
     <>
       {isImageLoaded && (
@@ -31,7 +38,14 @@ export const PetView = ({ image, bbox, width, isImageLoaded }: Props) => {
           <BBox coordinates={bbox} />
         </BBoxContainer>
       )}
-      {!isImageLoaded && <Skeleton variant="rectangular" animation="wave" />}
+      {!isImageLoaded && (
+        <Skeleton
+          variant="rectangular"
+          width={width}
+          height={height}
+          animation="wave"
+        />
+      )}
     </>
   );
 };
