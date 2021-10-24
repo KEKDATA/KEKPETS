@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/dropzone/basic.min.css" type="text/css" media="all" rel="stylesheet">
+    <link href="/static/dropzone/dropzone.min.css" type="text/css" media="all" rel="stylesheet">
+    <link href="/static/dropzone/dz.css" type="text/css" media="all" rel="stylesheet">
+    <script src="/static/admin/js/vendor/jquery/jquery.js"></script>
+    <script src="/static/dropzone/dropzone.min.js"></script>
+    <script src="/static/admin/js/jquery.init.js"></script>
+    <script src="/static/dropzone/dropzone-amd-module.min.js"></script>
+    <script src="/static/admin/js/core.js"></script>
+    <script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+    <script src="/static/admin/js/actions.js"></script>
+    <script src="/static/admin/js/urlify.js"></script>
+    <script src="/static/admin/js/prepopulate.js"></script>
+    <script src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+</head>
+<body>
+<h1>KEK</h1>
+<form action="/file-upload" method="post" class="dropzone dz dz-clickable">
+    {% csrf_token %}
+    <div>
+            <div class="fallback">
+            {{ form.image.as_p }}
+          </div>
+    </div>
+</form>
+
+
+</body>
+</html>

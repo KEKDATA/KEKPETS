@@ -1,0 +1,33 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@5.1
+      with:
+        switches: -avzr --delete
+        path: .
+        remote_path: /home/admin/kekpets/
+        remote_host: 217.28.229.61
+        remote_user: admin
+        remote_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+    - name: Deploy to Docker swarm
+      uses: wshihadeh/docker-deployment-action@v1
+      with:
+        remote_docker_host: admin@217.28.229.61
+        ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+        ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
+        deployment_mode: docker-compose
+        copy_stack_file: true
+        deploy_path: /home/admin/kekpets
+        stack_file_name: docker-compose.yml
+        keep_files: 5
+        args: up --force-recreate -d
