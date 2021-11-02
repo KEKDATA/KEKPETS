@@ -54,7 +54,7 @@ class AnimalSearchFilter(django_filters.FilterSet):
         }
         query = {'match_all': {}}
         queryset = (
-            DetectedObjectDocument.search()
+            DetectedObjectDocument.search()[:1488]
             .query('script_score', script=script, query=query)
             .to_queryset()
             .select_related('frame', 'frame__info')
