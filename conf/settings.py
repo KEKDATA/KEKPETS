@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['*']
 INTERNAL_IPS = ['localhost', '127.0.0.1', '0.0.0.0']
 # CORS_ALLOWED_ORIGINS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Application definition
