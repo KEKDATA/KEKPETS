@@ -33,7 +33,8 @@ def process_image(videcam_frame: VidecamFrame):
     videcam_info = VidecamInfo.objects.filter(videcam_id=analytics_result.camera_id).first()
     videcam_frame.videcam_id = analytics_result.camera_id
     videcam_frame.filmed_at = analytics_result.snapshot_datetime
-    videcam_frame.videcam_info = videcam_info
+    videcam_frame.info = videcam_info
+
     videcam_frame.save()
     for bbox in analytics_result.boxes:
         DetectedObject.objects.create(
