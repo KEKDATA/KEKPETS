@@ -33,7 +33,7 @@ def kek(request, *args, **kwargs):
     query = {
         "match_all": {}
     }
-    r = DetectedObjectDocument.search().extra(size=500).query('script_score', script=script, query=query)
+    r = DetectedObjectDocument.search()[:500].query('script_score', script=script, query=query)
     print(r.to_queryset())
     return HttpResponse('KEK')
 
