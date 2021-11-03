@@ -33,9 +33,10 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 INTERNAL_IPS = ['localhost', '127.0.0.1', '0.0.0.0']
 # CORS_ALLOWED_ORIGINS = ['*']
+# CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = ["https://kekdata.github.io/KEKPETS_PUBLIC/"]
 CSRF_TRUSTED_ORIGINS = ['kekdata.github.io/KEKPETS_PUBLIC/']
 CORS_ALLOW_CREDENTIALS = True
