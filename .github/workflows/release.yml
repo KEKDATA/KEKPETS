@@ -13,7 +13,7 @@ jobs:
     - name: rsync deployments
       uses: burnett01/rsync-deployments@5.1
       with:
-        switches: -avzr
+        switches: -avzr --delete
         path: .
         remote_path: /home/admin/kekpets/
         remote_host: 217.28.229.61
