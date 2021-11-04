@@ -31,8 +31,10 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
 #    command: ls -lah
-#    volumes:
-#      - .:/usr/src/app
+    volumes:
+      - ./media_dir:/usr/src/app/media
+      - ./static_dir:/usr/src/app/static
+      - ./.data:/usr/src/app/.data
     ports:
       - "8000:8000"
     env_file:
