@@ -29,7 +29,7 @@ services:
 #    - "5432:5432"
   app:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sudo python manage.py runserver 0.0.0.0:8000
 #    command: ls -lah
 #    volumes:
 #      - ./media_dir:/usr/src/app/media
