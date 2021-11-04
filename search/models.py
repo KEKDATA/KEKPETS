@@ -31,5 +31,9 @@ class DetectedObject(models.Model):
 
     def get_vector(self):
         colors = json.loads(self.color)
+        return VectorBuilder.build(colors, self.long_tail_proba)
+
+    def get_breed(self):
         breeds = json.loads(self.breed)
-        return VectorBuilder.build(colors, breeds, self.long_tail_proba)
+        breed, _ = max(breeds.items(), key=lambda x: x[1])
+        return breed
