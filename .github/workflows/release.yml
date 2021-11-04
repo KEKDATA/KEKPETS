@@ -30,4 +30,4 @@ jobs:
         deploy_path: /home/admin/kekpets
         stack_file_name: docker-compose.yml
         keep_files: 5
-        args: up --force-recreate -d
+        args: up —force-recreate —build -d
