@@ -18,7 +18,7 @@ class Command(BaseCommand):
             df = pd.read_excel('Open Data камеры видеонаблюдения.xlsx', sheet_name=sheet)
             print(f'Load "{sheet}" sheet')
             for _, row in tqdm(df.iterrows()):
-                VidecamInfo.objects.create(
+                VidecamInfo.objects.update_or_create(
                     videcam_id=row['ID'],
-                    address=row['Address'],
+                    defaults={'address': row['Address']},
                 )
