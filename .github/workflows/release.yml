@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: kek root
+    - uses: sudo su -
     - name: rsync deployments
       uses: burnett01/rsync-deployments@5.1
       with:
