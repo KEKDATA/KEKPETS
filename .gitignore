@@ -1,7 +1,7 @@
 .idea/
 ml_models
 .DS_Store
-
+static_dir
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
