@@ -1,8 +1,6 @@
 import json
-import random
 
 from django.apps import apps
-from django.conf import settings
 from django.contrib import admin, messages
 from django.contrib.admin.options import TO_FIELD_VAR, IS_POPUP_VAR
 from django.contrib.admin.templatetags.admin_urls import add_preserved_filters
@@ -14,7 +12,6 @@ from django.utils.html import format_html
 from django.utils.http import urlquote
 from django.utils.translation import gettext as _
 
-from .apps import SearchConfig
 from .forms import VidecamFramesUploadForm
 from .ml.algorithm import PetAnalytics
 from .models import VidecamFrame, DetectedObject, VidecamInfo

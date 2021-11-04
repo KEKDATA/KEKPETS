@@ -16,6 +16,7 @@ drf-yasg==1.20.0
 elasticsearch==7.15.1
 elasticsearch-dsl==7.4.0
 flatbuffers==2.0
+gunicorn==20.1.0
 idna==3.3
 imageio==2.9.0
 inflection==0.5.1
@@ -50,6 +51,7 @@ scipy==1.7.0
 six==1.16.0
 sqlparse==0.4.2
 tifffile==2021.10.12
+tqdm==4.62.3
 typing-extensions==3.10.0.2
 uritemplate==4.1.1
 urllib3==1.26.7
