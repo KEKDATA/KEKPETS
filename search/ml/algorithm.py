@@ -97,8 +97,8 @@ class PetAnalytics:
                     BoundingBox(
                         top_left_x=(x0 / image_width),
                         top_left_y=(y0 / image_height),
-                        height=((x1 - x0) / image_width),
-                        width=((y1 - y0) / image_height),
+                        height = ((y1 - y0) / image_height),
+                        width = ((x1 - x0) / image_width),
                         animal_colors=color_dict,
                         is_long_tail=long_tail_proba,
                         animal_breeds=breed_dict
