@@ -18,6 +18,7 @@ const options: Intl.DateTimeFormatOptions = {
   minute: 'numeric',
   second: 'numeric',
   hour12: false,
+  timeZone: 'UTC',
 };
 
 export const DateInfo = ({ date }: Props) => {

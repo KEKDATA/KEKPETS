@@ -1,8 +1,6 @@
 import { SearchResponse } from 'shared/typings/search';
 
-import { createApiUrl } from './lib/create_api_url';
-import { Paths } from './lib/paths';
-import { toJSON } from './lib/to_json';
+import { createApiUrl, Paths, toJSON } from './lib';
 
 export const search = (params: string): Promise<SearchResponse> =>
   fetch(

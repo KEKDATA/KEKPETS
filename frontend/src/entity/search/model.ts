@@ -21,6 +21,8 @@ import { requiredSettingsIncluded } from './lib/required_settings_included';
 import { getSearchSettingsFields } from './lib/search_settings_fields';
 import { SearchSettingsFormUrl } from './types';
 
+const RESULTS_PER_PAGE = 50;
+
 const SearchGate = createGate();
 
 const searchParamsNotFounded = createEvent();
@@ -62,7 +64,9 @@ const $isSearchParamsExist = createStore(false)
   .on(getSearchResultsFx.pending, () => true);
 
 const $count = createStore<null | number>(null)
-  .on(countReceived, (_, count) => count)
+  .on(countReceived, (_, count = RESULTS_PER_PAGE) =>
+    Math.ceil(count / RESULTS_PER_PAGE),
+  )
   .reset(searchParamsNotFounded);
 
 const $results = createStore<Results | null>(null)

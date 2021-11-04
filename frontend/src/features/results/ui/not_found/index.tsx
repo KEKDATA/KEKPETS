@@ -1,3 +1,4 @@
+import { withPrefix } from 'gatsby';
 import React from 'react';
 
 import Button from '@mui/material/Button';
@@ -30,7 +31,7 @@ export const NotFound = () => {
         </Description>
       </Grid>
       <Grid item>
-        <Button variant="contained" href="/">
+        <Button variant="contained" href={withPrefix('/')}>
           Давай попробуем еще раз
         </Button>
       </Grid>

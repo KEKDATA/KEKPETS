@@ -8,7 +8,6 @@ module.exports = {
     siteUrl: process.env.SITE_URL || `https://localhost`,
   },
   plugins: [
-    'gatsby-plugin-webpack-bundle-analyser-v2',
     {
       resolve: `gatsby-plugin-emotion`,
       options: {

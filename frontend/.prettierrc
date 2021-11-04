@@ -23,7 +23,7 @@
     "^shared/enums(.*)$",
     "^shared/typings(.*)$",
     "^shared/constants(.*)$",
-    "^assets/(.*)$","^[./]",
+    "^assets/(.*)$",
     "^[./]"],
   "importOrderSeparation": true
 }

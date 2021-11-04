@@ -57,6 +57,9 @@ export const Select = ({
           value={value}
           label={label}
           onChange={handleChange}>
+          <MenuItem value="">
+            <em>Не выбрано</em>
+          </MenuItem>
           {items.map(({ text, value }) => (
             <MenuItem key={value} value={value}>
               {text}
