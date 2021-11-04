@@ -15,7 +15,7 @@ import environ
 
 from search.ml.config import get_config as get_ml_config
 
-env = environ.Env(DEBUG=(bool, False))
+env = environ.Env(DEBUG=(bool, True))
 BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(str(BASE_DIR / '.env'))
 
