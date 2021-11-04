@@ -14,6 +14,7 @@ class DenseVector(fields.DEDField, field.DenseVector):
 @registry.register_document
 class DetectedObjectDocument(Document):
     vector = DenseVector(dims=VectorBuilder.length, attr='get_vector')
+    breed = fields.KeywordField(attr='get_breed')
 
     class Index:
         name = 'detected_objects'

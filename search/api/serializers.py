@@ -11,7 +11,7 @@ class DetectedObjectSerializer(ModelSerializer):
 
     class Meta:
         model = DetectedObject
-        fields = ('id', 'bbox', 'image', 'date', 'address', 'color')
+        fields = ('id', 'bbox', 'image', 'date', 'address')
 
     def get_address(self, obj):
         if obj.frame and obj.frame.info:

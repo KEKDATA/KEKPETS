@@ -1,5 +1,3 @@
-from random import choices
-
 import django_filters
 from django.db import models
 from django_filters import rest_framework as filters, ChoiceFilter
@@ -45,7 +43,6 @@ class AnimalSearchFilter(django_filters.FilterSet):
 
         vector = VectorBuilder.build(
             colors={self.form.cleaned_data['color']: 1.0},
-            breeds={self.form.cleaned_data['breed']: 1.0},
             long_tail_proba=long_tail_proba,
         )
         script = {
@@ -53,9 +50,15 @@ class AnimalSearchFilter(django_filters.FilterSet):
             'params': {'query_vector': vector}
         }
         query = {'match_all': {}}
+        search_result = DetectedObjectDocument.search()[:1488]
+
+        if self.form.cleaned_data.get('breed'):
+            search_result = search_result.query("match", breed=self.form.cleaned_data['breed'])
+
+        search_result = search_result.query('script_score', script=script, query=query)
+
         queryset = (
-            DetectedObjectDocument.search()[:1488]
-            .query('script_score', script=script, query=query)
+            search_result
             .to_queryset()
             .select_related('frame', 'frame__info')
         )
