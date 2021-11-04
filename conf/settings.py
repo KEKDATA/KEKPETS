@@ -168,3 +168,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 50,
 }
+
+
+FILE_UPLOAD_TEMP_DIR = BASE_DIR / 'tmp_upload'
+FILE_UPLOAD_MAX_MEMORY_SIZE = 2 ** 20
