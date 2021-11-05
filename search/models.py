@@ -8,6 +8,7 @@ from search.vector import VectorBuilder
 class VidecamInfo(models.Model):
     videcam_id = models.CharField(max_length=100, db_index=True)
     address = models.CharField(max_length=200, null=True, blank=True)
+    ovd_phones = models.CharField(max_length=500, null=True, blank=True)
 
 
 class VidecamFrame(models.Model):
