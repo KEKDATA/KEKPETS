@@ -3,7 +3,6 @@ import { combine, createEvent, sample } from 'effector';
 import { animalTypeModel } from 'entity/animal_type';
 import { breedModel } from 'entity/breed';
 import { colorModel } from 'entity/color';
-import { paginationModel } from 'entity/pagination';
 import { searchModel } from 'entity/search';
 import { tailModel } from 'entity/tail';
 
@@ -14,6 +13,8 @@ import { SearchSettingsFieldsKeys } from 'shared/constants/search_settings_field
 
 import { getQueryBySelectedSettings } from './lib/get_query_by_selected_settings';
 import { isSettingExist } from './lib/is_setting_exist';
+
+const DEFAULT_PAGE = '1';
 
 const formSubmitted = createEvent();
 
@@ -30,14 +31,14 @@ const $isDisabledForm = combine({
 /**
  * Собираем в единую сущность значения элементов формы поиска
  * Для последующих операций, например, с апи при сабмите формы
+ * При поиске мы всегда используем page = 1
  */
 const $settingsQueryString = combine({
   [SearchSettingsFieldsKeys.Type]: animalTypeModel.$value,
   [SearchSettingsFieldsKeys.Tail]: tailModel.$value,
   [SearchSettingsFieldsKeys.Color]: colorModel.$value,
   [SearchSettingsFieldsKeys.Breed]: breedModel.$value,
-  [SearchSettingsFieldsKeys.Page]: paginationModel.$pageForSearch,
-}).map(getQueryBySelectedSettings);
+}).map(params => getQueryBySelectedSettings({ ...params, page: DEFAULT_PAGE }));
 
 /**
  * Обновляем урл поиска после сабмита формы
