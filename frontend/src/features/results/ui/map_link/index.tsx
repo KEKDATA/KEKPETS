@@ -19,12 +19,9 @@ const StyledLink = styled(Link)(({ theme }) => ({
 
 const Address = styled(Typography)(({ theme }) => ({
   marginLeft: 10,
-  textOverflow: 'ellipsis',
-  overflow: 'hidden',
   maxWidth: 300,
-  whiteSpace: 'nowrap',
   [theme.breakpoints.up('sm')]: {
-    maxWidth: 430,
+    maxWidth: 450,
   },
 }));
 

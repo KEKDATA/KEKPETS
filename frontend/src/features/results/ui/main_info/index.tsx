@@ -4,17 +4,21 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 
+import { Result } from 'shared/typings/results';
+
 import { DateInfo } from '../date';
 import { ImageControls } from '../image_controls';
 import { MapLink } from '../map_link';
+import { PolicePhones } from '../police_phones';
 
 interface Props {
-  image: string;
-  date?: string;
-  address?: string;
+  image: Result['image'];
+  date?: Result['date'];
+  address?: Result['address'];
+  ovdPhones: Result['ovd_phones'];
 }
 
-export const MainInfo = ({ date, address, image }: Props) => {
+export const MainInfo = ({ date, address, image, ovdPhones }: Props) => {
   return (
     <>
       <Box mb={1}>
@@ -29,6 +33,11 @@ export const MainInfo = ({ date, address, image }: Props) => {
           {address && (
             <Grid item>
               <MapLink address={address} />
+            </Grid>
+          )}
+          {ovdPhones.length > 0 && (
+            <Grid item>
+              <PolicePhones ovdPhones={ovdPhones} />
             </Grid>
           )}
         </Grid>

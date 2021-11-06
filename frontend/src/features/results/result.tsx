@@ -36,7 +36,7 @@ const CardImage = styled('div')`
 `;
 
 export const Result = ({ result }: Props) => {
-  const { bbox, image, address, date } = result;
+  const { bbox, image, address, date, ovd_phones: ovdPhones } = result;
 
   const imageWithPrefix = `${prefixUrl}${image}`;
 
@@ -56,7 +56,7 @@ export const Result = ({ result }: Props) => {
     setPreviewVisible(false);
   };
 
-  const isMainInfoExist = address || date;
+  const isMainInfoExist = address || date || ovdPhones.length > 0;
 
   return (
     <Grid item sx={{ width: '100%' }}>
@@ -83,7 +83,12 @@ export const Result = ({ result }: Props) => {
             />
           </ImagePreview>
           {isMainInfoExist && (
-            <MainInfo address={address} date={date} image={imageWithPrefix} />
+            <MainInfo
+              address={address}
+              date={date}
+              image={imageWithPrefix}
+              ovdPhones={ovdPhones}
+            />
           )}
           {!isMainInfoExist && <ImageControls image={imageWithPrefix} />}
         </CardContent>
