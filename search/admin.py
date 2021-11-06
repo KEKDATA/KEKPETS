@@ -181,11 +181,6 @@ class DetectedObjectAdmin(admin.ModelAdmin):
     list_filter = ('frame',)
 
 
-
-
-
-
-
-
-
-
+@admin.register(VidecamInfo)
+class VidecamInfoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'videcam_id', 'address', 'ovd_phones')

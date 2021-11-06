@@ -29,7 +29,8 @@ services:
 #    - "5432:5432"
   app:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn conf.wsgi:application --bind 0.0.0.0:8000 -w 4
+#    command: python manage.py runserver 0.0.0.0:8000
 #    command: ls -lah
 #    volumes:
 #      - ./media_dir:/usr/src/app/media
